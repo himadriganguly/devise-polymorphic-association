@@ -1,0 +1,30 @@
+<!-- Fixed navbar -->
+	    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <%= link_to "<b>Pratt</b>".html_safe, root_path, class: "navbar-brand" %>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav">
+	          	<li><%= link_to "Home", root_path %></li>           
+	            <% unless user_signed_in? %>
+	            	<li><%= link_to("Teacher Registration", new_teacher_path) %></li>	
+	            	<li><%= link_to("Student Registration", new_student_path) %></li>	            	
+	            	<li><%= link_to("Login", new_user_session_path) %></li>            	  
+	            <% else %>
+	            	<% if current_user.meta_type == "Teacher" %>
+	            		<li><%= link_to("Teachers", teachers_path) %></li>
+	            	<% else %>
+	            		<li><%= link_to("Students", students_path) %></li>
+	            	<% end %>
+	            	<li><%= link_to("Logout", destroy_user_session_path, method: "delete") %></li> 
+	            <% end %> 
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </div>

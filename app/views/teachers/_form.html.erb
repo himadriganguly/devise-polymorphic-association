@@ -1,0 +1,59 @@
+<%= form_for(@teacher) do |f| %>
+  <% if @teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% @teacher.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="row" style="text-align: center;">
+  	
+  	<div class="col-lg-6">  		
+	    <%= f.label :name %><br>
+		<%= f.text_field :name %>
+  	</div>
+  	
+  	<div class="col-lg-6">  		
+		<%= f.label :qualification %><br>
+		<%= f.text_field :qualification %>	  	
+  	</div>
+  	
+  	<div class="col-lg-6">  		
+	    <%= f.label :experience %><br>
+		<%= f.text_field :experience %>	
+  	</div>
+  	
+  	<%= f.fields_for :user do |u| %>
+  		<div class="col-lg-6">  		
+  			<%= u.label :email %><br>
+			<%= u.text_field :email %>
+  		</div>
+  		
+  		<div class="col-lg-6">
+  			<%= u.label :password %><br>
+			<%= u.text_field :password %>
+  		</div>
+  		
+  		<div class="col-lg-6">
+  			<%= u.label :password_confirmation %><br>
+			<%= u.text_field :password_confirmation %>
+  		</div>		
+  	<% end %>  	
+  	
+  	<div class="col-lg-12" style="margin: 10px 0px; text-align: center;">
+    	<%= f.submit "Submit", :class=>"btn btn-info" %>
+  	</div>
+  	
+  	<%- if request.path == new_teacher_path %>
+  		<%= link_to "Log in", new_user_session_path %><br />
+  	<% end -%>
+
+  	
+  </div>
+  
+<% end %>

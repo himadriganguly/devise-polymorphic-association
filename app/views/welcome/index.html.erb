@@ -1,0 +1,149 @@
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+	    <div class="container">
+	    	<div class="row centered">
+	    		<div class="col-lg-12">
+	    			<% unless user_signed_in? %>
+						<h1>Welcome To <b>Pratt</b></h1>
+					<% else %>
+						<div style="position: relative; width: 900px; margin: 0px auto;">
+							<h1>Welcome <b><%= current_user.meta.name %></b></h1>
+							<span class="label label-success" style="position: absolute; right: 30px; top: 25px;"><%= current_user.meta_type%></span>
+						</div>
+					<% end %>
+					<h3>Show your product with this handsome theme.</h3>
+					<br>
+	    		</div>
+	    		
+	    		<div class="col-lg-2">
+	    			<h5>Amazing Results</h5>
+	    			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	    			<%= image_tag("arrow1.png", class: "hidden-xs hidden-sm hidden-md") %>
+	    		</div>
+	    		<div class="col-lg-8">
+	    			<%= image_tag("app-bg.png", class: "img-responsive") %>	    			
+	    		</div>
+	    		<div class="col-lg-2">
+	    			<br>
+	    			<%= image_tag("arrow2.png", class: "hidden-xs hidden-sm hidden-md") %>	    			
+	    			<h5>Awesome Design</h5>
+	    			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+	    		</div>
+	    	</div>
+	    </div> <!--/ .container -->
+	</div><!--/ #headerwrap -->
+
+
+	<section id="desc" name="desc"></section>
+	<!-- INTRO WRAP -->
+	<div id="intro">
+		<div class="container">
+			<div class="row centered">
+				<h1>Polymorphic Association Demo</h1>
+				<br>
+				<br>
+				<div class="col-lg-4">
+					<%= image_tag("intro01.png") %>					
+					<h3>Teacher Model</h3>
+					<p>In the Teacher Model there are there main fields<br /><strong>Name</strong>, <strong>Qualification</strong>, <strong>Experience</strong></p>
+				</div>
+				<div class="col-lg-4">
+					<%= image_tag("intro02.png") %>						
+					<h3>Student Model</h3>
+					<p>In the Student Model there are there main fields<br /><strong>Name</strong>, <strong>Class</strong>, <strong>Mobile</strong></p>
+				</div>
+				<div class="col-lg-4">
+					<%= image_tag("intro03.png") %>					
+					<h3>User (Devise)</h3>
+					<p>In the User Model there are there main fields<br /><strong>Email</strong>, <strong>Password</strong>, <strong>Meta ID</strong>, <strong>Meta Type</strong></p>
+				</div>
+			</div>
+			<br>
+			<hr>
+	    </div> <!--/ .container -->
+	</div><!--/ #introwrap -->
+	
+	<!-- FEATURES WRAP -->
+	<div id="features">
+		<div class="container">
+			<div class="row">
+				<h1 class="centered">What's New?</h1>
+				<br>
+				<br>
+				<div class="col-lg-6 centered">
+					<%= image_tag("mobile.png", class: "centered") %>
+				</div>
+				
+				<div class="col-lg-6">
+					<h3>Some Features</h3>
+					<br>
+				<!-- ACCORDION -->
+		            <div class="accordion ac" id="accordion2">
+		                <div class="accordion-group">
+		                    <div class="accordion-heading">
+		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+		                        Polymorphic Association
+		                        </a>
+		                    </div><!-- /accordion-heading -->
+		                    <div id="collapseOne" class="accordion-body collapse in">
+		                        <div class="accordion-inner">
+								<p>A slightly more advanced twist on associations is the polymorphic association. With polymorphic associations, a model can belong to more than one other model, on a single association. For example, you might have a picture model that belongs to either an employee model or a product model.<br /><a href="http://guides.rubyonrails.org/association_basics.html#polymorphic-associations">http://guides.rubyonrails.org/association_basics.html#polymorphic-associations</a></p>
+								</div><!-- /accordion-inner -->
+		                    </div><!-- /collapse -->
+		                </div><!-- /accordion-group -->
+		                <br>
+		
+		                <div class="accordion-group">
+		                    <div class="accordion-heading">
+		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+		                        Two Registration Page and Single Login Page
+		                        </a>
+		                    </div>
+		                    <div id="collapseTwo" class="accordion-body collapse">
+		                        <div class="accordion-inner">
+								<p>In this project there are two seperate registration page but a single login page. The two seperate registration page is for two seperate model <strong>Teacher</strong> and <strong>Student</strong>. The <strong>User</strong> Model here acts as the <strong>Polymorphic Association</strong> between the other two models.</p>
+								</div><!-- /accordion-inner -->
+		                    </div><!-- /collapse -->
+		                </div><!-- /accordion-group -->
+		                <br>
+		
+		                 <div class="accordion-group">
+		                    <div class="accordion-heading">
+		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+		                        Testing
+		                        </a>
+		                    </div>
+		                    <div id="collapseThree" class="accordion-body collapse">
+		                        <div class="accordion-inner">
+								<p>The testing of this project is done using <strong>RSpec</strong> and <strong>Cucumber</strong>. The <strong>RSpec</strong> is used for <strong>Unit Testing</strong> and <strong>Cucumber</strong> for <strong>Integration Testing</strong>.</p>
+								</div><!-- /accordion-inner -->
+		                    </div><!-- /collapse -->
+		                </div><!-- /accordion-group -->
+		                <br>
+		                
+		                 <div class="accordion-group">
+		                    <div class="accordion-heading">
+		                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+		                        Drawbacks
+		                        </a>
+		                    </div>
+		                    <div id="collapseFour" class="accordion-body collapse">
+		                        <div class="accordion-inner">
+								<p>The drawback of this project is that after we login in as teacher and go to edit a teacher then we have to provide the password in the passsword field to update teacher details, teacher details cannot be update with blank password field. Same for student.<br /><br />If anyone like to correct the code and implement this feature please make a fork of the peoject at github.</p>
+								</div><!-- /accordion-inner -->
+		                    </div><!-- /collapse -->
+		                </div><!-- /accordion-group -->
+		                <br>			
+					</div><!-- Accordion -->
+				</div>
+			</div>
+		</div><!--/ .container -->
+	</div><!--/ #features -->
+	
+	
+	   
+	<script>
+	$('.carousel').carousel({
+	  interval: 3500
+	})
+	</script>

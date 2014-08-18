@@ -1,0 +1,29 @@
+<div class="container">
+	
+	<h1>Show Teacher Details</h1>
+	
+	<table class="table">  
+		<thead>
+	  		<tr>
+	  			<th>Name</th>
+	  			<th>Email</th>
+	  			<th>Qualification</th>
+	  			<th>Experience</th>
+	  		</tr>	
+	  	</thead>
+	  	<tbody>
+	  		<tr class="success">
+	  			<td><%= @teacher.name %></td>
+	  			<td><%= @teacher.user.email %></td>
+	  			<td><%= @teacher.qualification %></td>
+	  			<td><%= @teacher.experience %></td>
+	  		</tr>
+	  	</tbody>
+	</table>
+	
+	<div style="margin: 20px auto; text-align: center">
+		<%= link_to 'Edit', edit_teacher_path(@teacher), class: "btn btn-success" %>
+		<%= link_to 'Back', teachers_path, class: "btn btn-warning" %>
+	</div>
+	
+</div>

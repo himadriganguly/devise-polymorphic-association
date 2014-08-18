@@ -1,0 +1,31 @@
+<div class="container">
+	
+	<h1>Show Student Details</h1>
+	
+	<table class="table">
+		
+		<thead>
+			<tr>
+				<th>Name</th>
+	  			<th>Email</th>
+	  			<th>Class</th>
+	  			<th>Mobile</th>
+			</tr>
+		</thead>	
+		
+		<tbody>
+	  		<tr class="success">
+	  			<td><%= @student.name %></td>
+	  			<td><%= @student.user.email %></td>
+	  			<td><%= @student.cl %></td>
+	  			<td><%= @student.mobile %></td>
+	  		</tr>
+	  	</tbody>		
+	</table>
+	
+	<div style="margin: 20px auto; text-align: center">
+		<%= link_to 'Edit', edit_student_path(@student), class: "btn btn-success" %>
+		<%= link_to 'Back', students_path, class: "btn btn-warning" %>
+	</div>
+	
+</div>
